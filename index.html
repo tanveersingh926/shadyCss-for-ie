@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        p {
+            color: red !important;
+        }
+
+
+        x-foo[shadow] p { color: blue; }
+
+    </style>
+</head>
+<body>
+    <x-foo id="test"><p>hi something</p></x-foo>
+
+
+    
+    <script src="./shadowStyles.min.js"></script>
+
+    <script>
+        // Example with selector string only
+        // document.shadowStyles('x-foo');
+
+        // Example with array containing both types
+        document.shadowStyles([
+        'x-foo', // All x-foo elements will have shadow styled children
+        document.getElementById('test') // Specific element
+        ]);
+    </script>
+</body>
+</html>
